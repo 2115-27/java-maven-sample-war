@@ -23,7 +23,7 @@ jobs:
       - name: Pre-Release Task
         run: echo updating Version Repo!!
         
-      
+      - id: versnid
       - name: Set Release Version
         run: |
           echo setting release version!!
