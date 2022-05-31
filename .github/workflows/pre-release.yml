@@ -1,20 +1,12 @@
 name: Pre-Release
 on: 
   workflow_call:
-    secrets:
-      AWS_ACCESS_KEY_ID:
-        required: true
-      AWS_SECRET_ACCESS_KEY:
-        required: true
-env:
-           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }} 
+
 jobs:
   Pre-Release:
     
     runs-on: ubuntu-latest
-    outputs:
-      versn: ${{ steps.versnid.outputs.versn }}
+    
     steps:
       - uses: actions/checkout@v2
 
@@ -24,7 +16,7 @@ jobs:
       - name: Pre-Release Task
         run: echo updating Version Repo!!
         
-      - id: versnid
+      
       - name: Set Release Version
         run: |
           echo setting release version!!
@@ -32,7 +24,7 @@ jobs:
           echo "${{ github.run_number }}" >> versions.cfg
           newversion=$(cat versions.cfg)
           echo $newversion
-          echo "::set-output name=versn::$newversion"
+         
         
       - name: Pre-Build
         run: echo Executing Pre build steps!!
