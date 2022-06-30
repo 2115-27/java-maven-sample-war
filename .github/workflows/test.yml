@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     name: test1
     steps:
-      - name: Hai
+       name: Hai
         run: echo "hello world"
 
    
