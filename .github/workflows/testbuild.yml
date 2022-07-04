@@ -21,7 +21,7 @@ jobs:
 #           echo $newversion
         run: |
           input='${{ github.workspace }}/version.cfg'
-          sed 's/ *$//' version.cfg
-          echo "${{github.run_number }}" >> version.cfg
-          cat version.cfg
+          sed 's/ *$//' version.cfg > versions.cfg
+          echo "${{github.run_number }}" >> versions.cfg
+          cat versions.cfg
           
