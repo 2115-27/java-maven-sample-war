@@ -1,0 +1,20 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+# permissions:
+#   contents: write
+#   packages: write
+    
+jobs:
+  Set-Release-Version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set Release Version
+        run: |
+          input='${{ github.workspace }}/version.cfg'
+          echo "${{github.run_number }}" >> version.cfg
+          newversion = $(cat version.cfg)
+          echo Version is: $newversion
