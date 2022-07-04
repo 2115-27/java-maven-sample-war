@@ -1,20 +1,17 @@
-name: TestBuild
-
+name: Test Build
 on:
   workflow_dispatch:
-
-# permissions:
-#   contents: write
-#   packages: write
-    
 jobs:
-  Set-Release-Version:
+  Set_Release_Version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set Release Version
+      - name: Set release version
         run: |
-          echo "${{github.run_number }}">>version.cfg
+          echo setting release version!!  
+          echo "${{ github.run_number }}" >> version.cfg
           newversion=$(cat version.cfg)
           echo $newversion
+          
+    
      
