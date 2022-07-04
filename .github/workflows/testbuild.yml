@@ -21,8 +21,8 @@ jobs:
 #           echo $newversion
         run: |
           echo setting release version!!
-          
-          echo "${{ github.run_number }}" >> version.cfg
-          newversion=$(cat version.cfg)
+          cp version.cfg new.cfg
+          echo "${{ github.run_number }}" >> new.cfg
+          newversion=$(cat new.cfg)
           echo $newversion
           
