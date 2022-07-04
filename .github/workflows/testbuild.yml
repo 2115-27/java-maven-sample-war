@@ -12,9 +12,9 @@ jobs:
       - name: Set release version
         run: |
           echo setting release version!!  
-          cp version.cfg ${{ github.workspace }}/versions.cfg 
-          echo "${{ github.run_number }}" >> versions.cfg
-          newversion=$(cat versions.cfg)
+          cat version.cfg | tr -d " \t\n\r" 
+          echo "${{ github.run_number }}" >> version.cfg
+          newversion=$(cat version.cfg)
           echo $newversion
           
     
