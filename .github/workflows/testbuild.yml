@@ -17,4 +17,4 @@ jobs:
           input='${{ github.workspace }}/version.cfg'
           echo "${{github.run_number }}" >> version.cfg
           newversion = $(cat version.cfg)
-          echo Version is: $newversion
+          echo $newversion
