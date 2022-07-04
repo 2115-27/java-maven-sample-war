@@ -13,9 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set Release Version
+#         run: |
+#           input='${{ github.workspace }}/version.cfg'
+#           sed 's/\r$//' ${{ github.workspace }}/version.cfg > version.cfg
+#           echo "${{github.run_number }}" >> version.cfg
+#           newversion=$(cat version.cfg)
+#           echo $newversion
         run: |
-          input='${{ github.workspace }}/version.cfg'
-          sed 's/\r$//' ${{ github.workspace }}/version.cfg > version.cfg
-          echo "${{github.run_number }}" >> version.cfg
-          newversion=$(cat version.cfg)
-          echo $newversion
+          cat version.cfg
+            
+          
