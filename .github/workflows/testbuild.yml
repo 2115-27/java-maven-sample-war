@@ -13,7 +13,8 @@ jobs:
         run: |
           echo setting release version!!  
           echo "${{ github.run_number }}" >> version.cfg
-          cat version.cfg | tr -d "[:space:]"
+          newversion=$(cat version.cfg | tr -d "[:space:]")
+          echo $newversion
           
           
     
