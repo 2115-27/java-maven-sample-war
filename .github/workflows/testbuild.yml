@@ -12,7 +12,7 @@ jobs:
       - name: Set release version
         run: |
           echo setting release version!!  
-          aws s3 cp s3://instidbucket/version/versionnew.cfg ${{ github.workspace }}/version.cfg --region us-west-1 
+          cp version.cfg ${{ github.workspace }}/version.cfg 
           echo "${{ github.run_number }}" >> version.cfg
           newversion=$(cat version.cfg)
           echo $newversion
