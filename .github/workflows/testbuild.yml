@@ -13,6 +13,19 @@ jobs:
           echo "${{ github.run_number }}" >> version.cfg
           newversion=$(cat version.cfg | tr -d "[:space:]")
           echo $newversion is the version
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - name: Use Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '12.x'
+#       - run: |
+#           npm install --force
+#           npm install -g @angular/cli
+#           npm ci
+#           npm run build --if-present
           
           
     
