@@ -15,6 +15,6 @@ jobs:
           Number_of_days=`grep Number_of_days $myfile |cut -d= -f2`
           Headsup_duration=`grep Headsup_duration $myfile |cut -d= -f2`
           echo ===================
-          echo Number_of_days
-          echo Headsup_duration
+          echo $Number_of_days
+          echo $Headsup_duration
           
