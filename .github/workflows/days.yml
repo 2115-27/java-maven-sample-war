@@ -1,0 +1,20 @@
+
+name: READ_DAYS_FROM_FILE
+on:
+  workflow_dispatch:
+jobs: 
+  days:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Store days to variables
+        run:  |
+          pwd
+          ls -lrta
+          myfile="${{ github.workspace }}/.github/days.txt"
+          Number_of_days=`grep Number_of_days $myfile |cut -d= -f2`
+          Headsup_duration=`grep Headsup_duration $myfile |cut -d= -f2`
+          echo ===================
+          echo Number_of_days
+          echo Headsup_duration
+          
