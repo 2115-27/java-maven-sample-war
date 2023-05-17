@@ -8,6 +8,6 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         
-        - id: versionid
+        - name: Check content
           run: | 
-               echo testing
+               ls -lrta
