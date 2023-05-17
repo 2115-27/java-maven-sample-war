@@ -1,0 +1,13 @@
+name: ChildWorkflow
+on:
+  workflow_call:
+jobs:
+   
+     Child_job1: 
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        
+        - id: versionid
+          run: | 
+               echo testing
